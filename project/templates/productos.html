@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{{url_for('main.agregar')}}"
+   class="btn btn-primary my-4">Agregar</a>
+
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead class="table-primary">
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cubo in cubos %}
+      <tr>
+        <td>{{ cubo.name }}</td>
+        <td>{{ cubo.description }}</td>
+        <td>{{ cubo.precio }}</td>
+        <td><img src="../static/img/{{ cubo.img }}"
+               height="100"></td>
+        <td>
+          <a href="{{url_for('main.update', id= cubo.id )}}"
+             class="btn btn-warning my-4">Editar</a>
+          <a href="{{url_for('main.delete', id= cubo.id )}}"
+             class="btn btn-danger my-4">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%endblock  content%}

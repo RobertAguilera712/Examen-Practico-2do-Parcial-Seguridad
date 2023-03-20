@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="my-4">Agregar</h1>
+<form action=""
+      enctype="multipart/form-data"
+      method="post">
+    <div class="my-3">
+        <label for="nombre"
+               class="form-label">Nombre</label>
+        <input type="text"
+               name="name"
+               class="form-control"
+               id="nombre"
+               placeholder="Nombre">
+    </div>
+    <div class="mb-3">
+        <label for="precio"
+               class="form-label">Precio</label>
+        <input type="number"
+               class="form-control"
+               id="precio"
+               name="precio"
+               placeholder="Precio">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1"
+               class="form-label">Descripción</label>
+        <textarea class="form-control"
+                  placeholder="Descripción"
+                  name="description"
+                  id="exampleFormControlTextarea1"
+                  rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="formFile"
+               class="form-label">Imagen</label>
+        <input class="form-control"
+               name="imagen"
+               type="file"
+               id="formFile">
+    </div>
+    <input class="btn btn-primary"
+           type="submit"
+           value="Agregar">
+</form>
+{%endblock  content%}

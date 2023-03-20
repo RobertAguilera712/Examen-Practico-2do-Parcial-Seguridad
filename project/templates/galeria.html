@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<div class="my-4 row">
+    {% for cubo in cubos %}
+    <div class="col-4">
+        <div class="card h-100">
+            <img src="../static/img/{{ cubo.img }}"
+                 class="card-img-top object-fit-cover"
+                 height="50%">
+            <div class="card-body">
+                <h5 class="card-title">{{ cubo.name }}</h5>
+                <p class="card-text fw-bold">${{ cubo.precio }}</p>
+                <p class="card-text">{{ cubo.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{%endblock  content%}
